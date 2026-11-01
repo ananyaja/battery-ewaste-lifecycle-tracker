@@ -26,7 +26,7 @@ With the rapid growth of portable electronics and electric vehicles, lithium-ion
    - **Inheritance:** Uses a base class (`BaseBattery`) to eliminate code duplication across specialized battery chemistries (`LithiumIonBattery`, `LeadAcidBattery`).
    - **Polymorphism:** Implements unified interface methods (like `.get_recycling_protocol()`) so different battery types handle their own disposal rules automatically.
 
----
+
 
 ## 📁 Repository Structure
 
@@ -37,7 +37,7 @@ battery-ewaste-lifecycle-tracker/
 ├── oop_tutorial_battery_ewaste.md # Comprehensive OOP tutorial (Encapsulation, Inheritance, Polymorphism)
 └── README.md                   # Project documentation
 ```
-##🚀 Getting Started
+## 🚀 Getting Started
 Ensure you have Python 3 installed on your system.
 
 Clone or download this repository locally.
@@ -50,5 +50,7 @@ Bash
 python battery_metrics.py
 
 ```
-##💡 Learning & Development
+## 💡 Learning & Development
 This repository serves as both a practical environmental engineering utility and a personal learning workshop exploring Python data structures, algorithms, and clean software architecture. Contributions, forks, and expansions are welcome!
+
+---
