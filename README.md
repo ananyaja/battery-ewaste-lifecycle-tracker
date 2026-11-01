@@ -36,6 +36,11 @@ With the rapid growth of portable electronics and electric vehicles, lithium-ion
    - **Encapsulation:** Protects internal telemetry (like current capacity and voltage) using name-mangling (`__`) and controlled getter/setter methods.
    - **Inheritance:** Uses a base class (`BaseBattery`) to eliminate code duplication across specialized battery chemistries (`LithiumIonBattery`, `LeadAcidBattery`).
    - **Polymorphism:** Implements unified interface methods (like `.get_recycling_protocol()`) so different battery types handle their own disposal rules automatically.
+  
+### 📊 Environmental Impact & Triage Visualization
+Here is a visual representation of cumulative mass diverted from landfills by tracking and categorising battery health locally:
+
+![Battery E-Waste Impact Comparison](ewaste_impact_comparison.png)
 
 ---
 
