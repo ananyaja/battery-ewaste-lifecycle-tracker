@@ -1,4 +1,6 @@
 
+
+
 # Battery E-Waste Lifecycle Tracker
 
 A Python-based engineering toolkit and educational repository designed to model, track, and triage lithium-ion and mixed battery chemistries for e-waste management and circular economy applications.
@@ -34,9 +36,7 @@ battery-ewaste-lifecycle-tracker/
 ├── battery_metrics.py          # Core classes, SoH calculations, and triage logic
 ├── oop_tutorial_battery_ewaste.md # Comprehensive OOP tutorial (Encapsulation, Inheritance, Polymorphism)
 └── README.md                   # Project documentation
-
 ```
-
 ##🚀 Getting Started
 Ensure you have Python 3 installed on your system.
 
@@ -44,10 +44,11 @@ Clone or download this repository locally.
 
 Run the core metrics script to see the triage system in action:
 
-Bash
 ```
+Bash
+
 python battery_metrics.py
+
 ```
 ##💡 Learning & Development
 This repository serves as both a practical environmental engineering utility and a personal learning workshop exploring Python data structures, algorithms, and clean software architecture. Contributions, forks, and expansions are welcome!
-
