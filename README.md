@@ -75,7 +75,7 @@ jupyter notebook notebooks/01_battery_lifecycle_tutorial.ipynb
 
 ---
 
-📬 **Authors & Collaboration:** 
+### 📬 **Authors & Collaboration:** 
 * **Lead Researcher & Domain Expert:** Ananyaja Debadipta
 * **AI Collaborator & Technical Co-Pilot:** Gemini (Google AI)
 
