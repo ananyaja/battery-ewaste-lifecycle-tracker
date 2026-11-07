@@ -1,76 +1,82 @@
+# 🔋 Battery E-Waste Lifecycle Tracker & Circular Economy Toolkit
 
-# Battery E-Waste Lifecycle Tracker
+> *"Tracking battery inventory, triage pathways, and environmental lifecycles from acquisition to responsible e-waste recycling."*
 
 A Python-based engineering toolkit and educational repository designed to model, track, and triage lithium-ion and mixed battery chemistries for e-waste management and circular economy applications.
 
-## 🌍 The Global Context & Motivation
-
-Modern electronic waste is growing five times faster than documented e-waste recycling globally. According to the **Global E-waste Monitor** (jointly published by the International Telecommunication Union [ITU] and the United Nations Institute for Training and Research [UNITAR]), the world generated a record **62 million tonnes of e-waste** in a single year. 
-
-While large appliances and heavy equipment dominate the physical weight of total e-waste, lithium-ion batteries and small IT devices carry a disproportionately high environmental and chemical hazard due to heavy metal leaching (cobalt, nickel, and lithium). 
-
-### Project Purpose
-The **Battery E-Waste Lifecycle Tracker** bridges the gap between macro-level statistics and local triage. Rather than trying to map global tonnage on a local scale, this tool provides modular Python scripts to inventory, assess State of Health (SoH), route second-life candidates, and calculate precise landfill mass diversion for individual battery batches.
-
----
-### 📚 Data References
-* **Global E-waste Generation:** *Global E-waste Monitor 2024* – International Telecommunication Union (ITU) and United Nations Institute for Training and Research (UNITAR).
-
-## 🌍 The Mission
-With the rapid growth of portable electronics and electric vehicles, lithium-ion battery waste presents a major environmental challenge to landfills. This project applies clean Object-Oriented Programming (OOP) principles in Python to automate the health assessment, degradation tracking, and end-of-life recycling triage of battery cells.
-
 ---
 
-## 🛠️ Key Technical Features
+## 📌 Project Architecture & Modular Design
 
-1. **State of Health (SoH) & Capacity Fade Tracking:** 
-   - Calculates percentage capacity loss relative to initial manufactured capacity.
-   - Normalizes health metrics across different cell sizes and chemistries.
-
-2. **Three-Tier Circular Economy Triage:**
-   - **Tier 1 (Primary Use):** State of Health $\ge 80\%$. Fit for continued primary use.
-   - **Tier 2 (Second-Life Candidate):** State of Health between $50\%$ and $79.9\%$. Suitable for low-drain or stationary energy storage (e.g., solar LED setups, backup routers).
-   - **Tier 3 (Immediate Recycle / Mineral Recovery):** State of Health $< 50\%$ or severe degradation requiring hydrometallurgical processing to recover critical materials (Lithium, Cobalt, Nickel).
-
-3. **Object-Oriented Programming (OOP) Architecture:**
-   - **Encapsulation:** Protects internal telemetry (like current capacity and voltage) using name-mangling (`__`) and controlled getter/setter methods.
-   - **Inheritance:** Uses a base class (`BaseBattery`) to eliminate code duplication across specialized battery chemistries (`LithiumIonBattery`, `LeadAcidBattery`).
-   - **Polymorphism:** Implements unified interface methods (like `.get_recycling_protocol()`) so different battery types handle their own disposal rules automatically.
-  
-### 📊 Environmental Impact & Triage Visualization
-Here is a visual representation of cumulative mass diverted from landfills by tracking and categorising battery health locally:
-
-![Battery E-Waste Impact Comparison](ewaste_impact_comparison.png)
-
----
-
-## 📁 Repository Structure
+To make this codebase clean, maintainable, and structured for educational tutorials, the logic is separated into dedicated classes and modules rather than a single monolithic script:
 
 ```text
 battery-ewaste-lifecycle-tracker/
 │
-├── battery_classes.py          # OOP architectural pillars (SecureBattery, BaseBattery, etc.)
-├── battery_metrics.py          # Capacity fade & State of Health calculations
-├── battery_inventory.py        # Module 1: Inventory logging & batch tracking
-├── environmental_impact.py     # Module 3: Landfill mass diversion & toxic recovery
-├── environmental_plot.py       # Python script generating the impact comparison chart
-├── triage_playground.ipynb     # Interactive Jupyter/Colab testing notebook
-├── ewaste_impact_comparison.png# Generated visualization asset
-└── README.md                   # Project documentation with macro stats & citations
-
+├── README.md                          # Master project documentation
+├── requirements.txt                   # Python dependencies (Pandas, Matplotlib, NumPy)
+│
+├── modules/                           # Core modular classes
+│   ├── __init__.py
+│   ├── inventory_logger.py            # Class 1: BatteryInventoryLogger
+│   ├── ewaste_triage.py               # Class 2: EWasteTriageAnalyzer
+│   └── impact_visualizer.py           # Class 3: EnvironmentalImpactPlotter
+│
+├── notebooks/                         # Step-by-step tutorial notebooks
+│   └── 01_battery_lifecycle_tutorial.ipynb
+│
+└── data/                              # Sample logs and triage datasets
+    └── sample_battery_inventory.csv
 ```
 
-## 🚀 Getting Started
-Ensure you have Python 3 installed on your system.
+---
 
-Clone or download this repository locally.
+## 🛠️ Core Classes & Tutorial Breakdown
 
-Run the core metrics script to see the triage system in action:
+### 1. `BatteryInventoryLogger` (`inventory_logger.py`)
+* **Purpose:** Handles ingestion, validation, and structured logging of battery chemistry types (Li-ion, NiMH, Lead-Acid), capacity ratings, and operational cycle counts.
+* **Key Functionality:** Tracks acquisition dates, health status, and current storage states.
 
-Bash
+### 2. `EWasteTriageAnalyzer` (`ewaste_triage.py`)
+* **Purpose:** Evaluates end-of-life status based on voltage degradation, physical swelling flags, or capacity drop below threshold limits.
+* **Key Functionality:** Automatically classifies cells into triage paths: **Reuse**, **Repurpose (Second Life)**, or **Recycle / Safe Disposal**.
+
+### 3. `EnvironmentalImpactPlotter` (`impact_visualizer.py`)
+* **Purpose:** Generates automated Matplotlib / Seaborn environmental impact plots.
+* **Key Functionality:** Visualises toxic material diversion (Cobalt, Nickel, Lead) kept out of municipal landfills through proper recycling triage.
+
+---
+
+## 🚀 How to Run the Code
+
+**1. Clone the repository:**
+```bash
+git clone https://github.com/ananyaja/battery-ewaste-lifecycle-tracker.git
+cd battery-ewaste-lifecycle-tracker
 ```
-python battery_metrics.py
-```
-## 💡 Learning & Development
-This repository serves as both a practical environmental engineering utility and a personal learning workshop exploring Python data structures, algorithms, and clean software architecture. Contributions, forks, and expansions are welcome!
 
+**2. Set up the environment:**
+```bash
+python -m venv venv
+source venv/bin/activate  # On Windows: venv\Scripts\activate
+pip install -r requirements.txt
+```
+
+**3. Launch the tutorial notebook:**
+```bash
+jupyter notebook notebooks/01_battery_lifecycle_tutorial.ipynb
+```
+
+---
+
+## 📊 Analytical Findings & Circular Economy Insights
+* **Triage Efficiency:** Automated categorisation drastically reduces the time required to sort mixed inventory batches into safe recycling streams.
+* **Resource Recovery:** Tracking cumulative capacity loss highlights optimal windows for repurposing energy storage cells into low-drain backup systems before full material recycling becomes necessary.
+
+---
+
+📬 **Authors & Collaboration:** 
+* **Lead Researcher & Domain Expert:** Ananyaja Debadipta
+* **AI Collaborator & Technical Co-Pilot:** Gemini (Google AI)
+
+*Developed collaboratively as an open-source technical partnership bridging independent data research and structured software design.*
