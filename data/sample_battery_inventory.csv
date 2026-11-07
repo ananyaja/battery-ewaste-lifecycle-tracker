@@ -1,0 +1,4 @@
+batch_id,chemistry,initial_capacity_mah,current_capacity_mah,source_device
+LIB-101,NMC,3000,2500,Smartphone
+LIB-102,LFP,5000,3400,Solar Backup
+LIB-103,NMC,2500,1100,Laptop
